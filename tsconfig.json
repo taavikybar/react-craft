@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "esnext",
+      "jsx": "react",
+      "declaration": true,
+      "sourceMap": true,
+      "outDir": "./build",
+      "removeComments": true,
+      "strict": false,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "noImplicitThis": true,
+      "alwaysStrict": true,
+      "strictPropertyInitialization": false,
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "types": [
+        "node"
+      ],
+      "noUnusedLocals": true,
+      "resolveJsonModule": true
+    },
+    "include": [
+      "lib/**/*"
+    ]
+  }
+  
