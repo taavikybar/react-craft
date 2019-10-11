@@ -26,7 +26,10 @@ module.exports = {
       }
     }],
     'react/prop-types': 0,
-    'brace-style': [2, '1tbs']
+    '@typescript-eslint/explicit-function-return-type': ['error', {
+      allowExpressions: true,
+      allowTypedFunctionExpressions: true
+    }],
   },
   settings: {
     react: {

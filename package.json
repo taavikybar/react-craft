@@ -6,15 +6,19 @@
   "author": "Taavi Kübar",
   "main": "app.tsx",
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@types/koa": "^2.0.50",
+    "@types/koa-send": "^4.1.2",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.4",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
     "@typescript-eslint/parser": "^2.3.3",
     "babel-loader": "^8.0.6",
+    "copyfiles": "^2.1.1",
     "css-loader": "^3.1.0",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
@@ -25,6 +29,7 @@
     "husky": "^3.0.8",
     "markdown-loader": "^5.0.0",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.3",
     "prettier": "^1.18.2",
     "raw-loader": "^3.1.0",
     "sass-lint": "^1.13.1",
@@ -32,11 +37,15 @@
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
+    "watch-cli": "^0.2.3",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "@koa/router": "^8.0.2",
+    "koa": "^2.8.2",
+    "koa-send": "^5.0.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -47,16 +56,21 @@
     "dev": "webpack",
     "prod": "webpack --config webpack.config.prod.js",
     "hot": "webpack-dev-server",
-    "server": "http-server",
     "prod-server": "http-server build",
     "lint": "yarn eslint && yarn sasslint",
-    "lint:fix": "yarn eslint --fix && yarn sasslint",
+    "lint-fix": "yarn eslint --fix && yarn sasslint",
     "eslint": "eslint ./lib/**/*.{ts,tsx}",
-    "sasslint": "sass-lint --config .sasslintrc --no-exit --verbose"
+    "sasslint": "sass-lint --config .sasslintrc --no-exit --verbose",
+    "server-b": "tsc -p server && babel ./server-build --out-dir ./server-build && yarn server-c",
+    "server-c": "copyfiles -u 1 \"server-build/**/*\" \"server-dist\"",
+    "server-w": "yarn server-b && watch \"server/**/*\" \"yarn server-b\"",
+    "server": "nodemon ./server-dist",
+    "clean-server": "rm -rf server-dist",
+    "clean": "rm -rf server-dist server-build dist"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint:fix"
+      "pre-commit": "yarn lint-fix"
     }
   }
 }

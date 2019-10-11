@@ -1,6 +1,5 @@
 # Create interfaces for any sort of data object
 
-
 Having `any` as a type defeats the purpose of TypeScript and effectively disables type checking. Whenever possible, create interfaces for data objects.
 
 ```
@@ -40,5 +39,3 @@ src/
 		interfaces/
 		enums/
 ```
-
-
