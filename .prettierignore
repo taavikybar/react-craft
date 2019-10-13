@@ -3,4 +3,4 @@ node_modules/
 build/
 coverage/
 webpack.config.js
-webpack.js
+webpack.config.prod.js

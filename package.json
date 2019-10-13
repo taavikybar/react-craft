@@ -57,6 +57,7 @@
   "scripts": {
     "dev": "webpack",
     "prod": "webpack --config webpack.config.prod.js",
+    "build": "yarn server-b && yarn prod",
     "hot": "webpack-dev-server",
     "prod-server": "http-server build",
     "lint": "yarn eslint && yarn sasslint",
