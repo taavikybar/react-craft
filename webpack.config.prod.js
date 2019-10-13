@@ -1,4 +1,5 @@
-const path = require('path') // eslint-disable-line
+const path = require('path'); // eslint-disable-line
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line
 
 module.exports = {
   mode: 'production',
@@ -86,4 +87,9 @@ module.exports = {
     filename: 'bundle.js',
     path: path.join(__dirname, '/build'),
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.prod.html'
+    })
+  ]
 }

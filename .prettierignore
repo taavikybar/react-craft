@@ -1,6 +1,6 @@
 node_modules/
 .git/
-build/
-coverage/
 webpack.config.js
 webpack.config.prod.js
+build/index.html
+coverage/

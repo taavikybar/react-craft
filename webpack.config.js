@@ -1,5 +1,6 @@
 const path = require('path') // eslint-disable-line
 const webpack = require('webpack') // eslint-disable-line
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line
 
 module.exports = {
   mode: 'development',
@@ -56,7 +57,6 @@ module.exports = {
             },
           },
         ],
-        // include: path.join(__dirname, 'lib/components/**/*')
       },
       {
         test: /\.css$/,
@@ -69,7 +69,6 @@ module.exports = {
             },
           },
         ],
-        // include: path.join(__dirname, 'lib/components/**/*')
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -99,6 +98,9 @@ module.exports = {
     path: path.join(__dirname, '/build'),
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
   ],
 }
