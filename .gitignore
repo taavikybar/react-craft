@@ -4,3 +4,5 @@ build
 server-dist
 server-build
 dist
+
+.DS_Store

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './sidebar.scss'
+
 import { links } from '../config/links'
+
+import './sidebar.scss'
 
 export const Sidebar: React.FC = () => (
   <aside className="sidebar">

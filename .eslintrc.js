@@ -4,6 +4,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings'
   ],
   parserOptions: {
     ecmaVersion: 2018,
@@ -30,6 +32,10 @@ module.exports = {
       allowExpressions: true,
       allowTypedFunctionExpressions: true
     }],
+    'sort-imports': 0,
+    'import/order': ['error'],
+    'import/no-unresolved': 0,
+    'import/newline-after-import': 2,
   },
   settings: {
     react: {

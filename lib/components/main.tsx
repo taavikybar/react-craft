@@ -1,23 +1,27 @@
+import { BrowserRouter, Route } from 'react-router-dom'
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import { links } from '../config/links'
+
+import './main.scss'
+import { Article } from './article'
 import { Home } from './home'
 import { Sidebar } from './sidebar'
-import './main.scss'
-import { interfacesDoc } from '../docs'
-import { Article } from './article'
 
 export const Main: React.FC = () => (
   <main className="main">
-    <Router>
+    <BrowserRouter>
       <Sidebar />
-      <Route path="/interfaces" exact>
-        <Article markdownText={interfacesDoc} />
-      </Route>
-      {/* <Route path="/linters" exact component={lintersDoc} /> */}
+
       <Route path="/" exact>
         <Home />
       </Route>
-    </Router>
+
+      {links.map((link, index) => (
+        <Route key={index} path={link.url} exact>
+          <Article markdownText={link.text || ''} />
+        </Route>
+      ))}
+    </BrowserRouter>
   </main>
 )
