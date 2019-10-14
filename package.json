@@ -58,7 +58,7 @@
   "scripts": {
     "dev": "webpack",
     "prod": "webpack --config webpack.config.prod.js",
-    "build": "yarn server-b && yarn prod",
+    "build": "yarn prod && copyfiles \"_redirects\" \"build\"",
     "hot": "webpack-dev-server && copyfiles \"index.html\" \"build\"",
     "prod-server": "http-server build",
     "lint": "yarn eslint && yarn sasslint",
