@@ -1,0 +1,84 @@
+<h1 id="exit-early-from-if-statements">Exit early from if statements</h1>
+<p>Nested statements are hard to read and the more nesting the more logic the reader needs to keep in mind at once. Whenever possible, return immediately from your if statements instead of using <code>else</code>. In this scenario, the last else statement does not need to be inside an else anymore.</p>
+<p>If/else statements can grow very big and you can never be sure whether some code sits after the if/else waiting to be executed once all the if/else-s are checked through. If you exit early from an if statement, you explicitly tell to the reader that there is no additional code in this method that will be executed.</p>
+<pre><code>if (isUserLoggedIn()) {
+    startSession()
+} else {
+    greetQuest()
+}</code></pre>
+<pre><code>if (isUserLoggedIn()) {
+    return startSession()
+}
+
+greetQuest()</code></pre>
+<pre><code>const data = getSomeData()
+
+if (data) {
+    if (data.user) {
+        if (data.user.name &amp;&amp; data.user.avatar) {
+            return (
+                &lt;UserProfile
+                    name={data.user.name}
+                    avatar={data.user.avatar)
+                /&gt;
+            )
+        }
+    }
+}</code></pre>
+<pre><code>const data = getSomeData()
+
+if (!data || !data.user) {
+    return null
+}
+
+const { name, avatar } = data.user
+
+return (
+    &lt;UserProfile
+        name={name}
+        avatar={avatar)
+    /&gt;
+)
+</code></pre>
+<pre><code>const userName = getUserName(user)
+
+const getUserName = user =&gt; {
+    let userName = &#39;&#39;
+    
+    if (user.id === 1) {
+        userName = &#39;John
+    } else if (user.id === 2) {
+        userName = &#39;Paul&#39;
+    } else if (user.id === 3) {
+        userName = &#39;James&#39;
+    } else if (user.id === 4) {
+        userName = &#39;Bruce&#39;
+    } else {
+        userName = &#39;User not found&#39;
+    }
+    
+    return userName
+}
+</code></pre>
+<pre><code>const userName = getUserName(user)
+
+const getUserName = user =&gt; {
+    if (user.id === 1) {
+        return &#39;John
+    } 
+    
+    if (user.id === 2) {
+        return &#39;Paul&#39;
+    }
+    
+    if (user.id === 3) {
+        return &#39;James&#39;
+    }
+    
+    if (user.id === 4) {
+        return &#39;Bruce&#39;
+    }
+    
+    return &#39;User not found&#39;
+}
+</code></pre>

@@ -19,7 +19,7 @@ export const Main: React.FC = () => (
 
       {links.map((link, index) => (
         <Route key={index} path={link.url} exact>
-          <Article markdownText={link.text || ''} />
+          <Article html={link.html || ''} />
         </Route>
       ))}
     </BrowserRouter>

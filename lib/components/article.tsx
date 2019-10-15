@@ -1,14 +1,13 @@
 import React from 'react'
-import Markdown from 'react-markdown'
 
 import './article.scss'
 
 interface ArticleProps {
-  markdownText: string
+  html: string
 }
 
-export const Article: React.FC<ArticleProps> = ({ markdownText }) => (
+export const Article: React.FC<ArticleProps> = ({ html }) => (
   <div className="article">
-    <Markdown source={markdownText} escapeHtml={false} />
+    <div dangerouslySetInnerHTML={{ __html: html }} />
   </div>
 )

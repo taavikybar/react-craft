@@ -1,0 +1,25 @@
+<h1 id="use-yarn-version-or-npm-version">Use Yarn version (or npm version)</h1>
+<p>If you are working on a versioned library or application that uses <a href="https://semver.org/">Semantic Versioning</a> to manage its versions, use <a href="https://yarnpkg.com/en/docs/cli/version">Yarn Version</a> or <a href="https://docs.npmjs.com/cli/version">NPM Version</a> to bump the version number instead of manually changing it in <code>package.json</code> and other related places.</p>
+<p>To bump the version, just run the relevant command:</p>
+<ul>
+<li><code>yarn version --patch</code> - PATCH version
+<ul>
+<li>Usually a bug fix -&gt; non-breaking change which fixes an issue</li>
+</ul></li>
+<li><code>yarn version --minor</code> - MINOR version
+<ul>
+<li>New feature -&gt; non-breaking change which adds functionality</li>
+</ul></li>
+<li><code>yarn version --major</code> - MAJOR version
+<ul>
+<li>Breaking change -&gt; fix or feature that would cause existing functionality to change</li>
+</ul></li>
+</ul>
+<h4 id="git-tags">Git tags</h4>
+<p>Using Yarn version also adds appropriate <a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag">git tag</a> which can be used to <a href="https://help.github.com/en/articles/creating-releases">create releases in Github</a> (or any other git version control system).</p>
+<p>Use <code>git tag</code> to list all the possible tags:</p>
+<pre><code>v3.0.1
+v3.0.2
+v3.1.0
+v4.0.0</code></pre>
+<p>Remember, by default <code>git push</code> will not push tags to remote. Use <code>git push origin --tags</code> to push all the tags to remote. Or <code>git push origin v1.5</code> to push a single tag only.</p>

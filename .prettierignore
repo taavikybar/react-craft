@@ -4,3 +4,4 @@ webpack.config.js
 webpack.config.prod.js
 build/index.html
 coverage/
+md-converter.js

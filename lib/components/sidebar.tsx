@@ -7,11 +7,17 @@ import './sidebar.scss'
 
 export const Sidebar: React.FC = () => (
   <aside className="sidebar">
+    <Link className="sidebar__logo" to="/">
+      React Craft
+    </Link>
+
     <nav>
       <ul className="sidebar__links">
         {links.map((link, index) => (
           <li key={index}>
-            <Link to={link.url}>{link.title}</Link>
+            <Link className="sidebar__link" to={link.url}>
+              {link.title}
+            </Link>
           </li>
         ))}
       </ul>

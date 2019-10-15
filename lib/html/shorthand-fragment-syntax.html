@@ -1,0 +1,46 @@
+<h1 id="use-shorthand-fragment-syntax">Use shorthand Fragment syntax</h1>
+<p>Since React does not allow multiple children on the same level, there are 2 options how to solve it:</p>
+<ul>
+<li>wrapping them in a html element</li>
+<li>wrapping them in <code>React.Fragment</code></li>
+</ul>
+<p>Second option is better since it does no add additional unnecessary html elements to the DOM.</p>
+<p>If you do not need to pass props to <code>React.Fragment</code>, always use shorthand syntax <code>&lt;&gt;&lt;/&gt;</code> because <code>&lt;React.Fragment&gt;&lt;/React.Fragment&gt;</code> is boilerplate code and adds no extra information.</p>
+<p>For example:</p>
+<pre><code>&lt;React.Fragment&gt;
+    &lt;ProfileSection /&gt;
+    
+    &lt;PaymentsSection&gt;
+        &lt;React.Fragment&gt;
+            &lt;BankDetails /&gt;
+            &lt;GSTDetails /&gt;
+        &lt;/React.Fragment&gt;
+    &lt;/PaymentsSection&gt;
+    
+    &lt;SkillSection&gt;
+        &lt;React.Fragment&gt;
+            &lt;DirectorSkill /&gt;
+            &lt;ManagerSkill /&gt;
+            &lt;UserSkill /&gt;
+        &lt;/React.Fragment&gt;
+    &lt;/SkillSection&gt;
+&lt;/React.Fragment&gt;</code></pre>
+<p>With shorthand syntax, it is much easier to concentrate on the important parts of the code and disregard the unimportant <code>Fragments</code>:</p>
+<pre><code>&lt;&gt;
+    &lt;ProfileSection /&gt;
+    
+    &lt;PaymentsSection&gt;
+        &lt;&gt;
+            &lt;BankDetails /&gt;
+            &lt;GSTDetails /&gt;
+        &lt;&gt;
+    &lt;/PaymentsSection&gt;
+    
+    &lt;SkillSection&gt;
+        &lt;&gt;
+            &lt;DirectorSkill /&gt;
+            &lt;ManagerSkill /&gt;
+            &lt;UserSkill /&gt;
+        &lt;/&gt;
+    &lt;/SkillSection&gt;
+&lt;/&gt;</code></pre>

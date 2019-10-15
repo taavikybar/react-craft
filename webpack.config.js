@@ -22,23 +22,13 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         use: [{
           loader: 'html-loader',
           options: {
             minimize: true,
           },
         }],
-      },
-      {
-        test: /\.md$/,
-        use: [{
-            loader: 'html-loader',
-          },
-          {
-            loader: 'markdown-loader',
-            options: {},
-          },
-        ],
       },
       {
         test: /\.scss$/,

@@ -1,0 +1,31 @@
+<h1 id="create-interfaces-for-any-sort-of-data-object">Create interfaces for any sort of data object</h1>
+<p><a href="exit-early-from-if.md">test</a></p>
+<p>Having <code>any</code> as a type defeats the purpose of TypeScript and effectively disables type checking. Whenever possible, create interfaces for data objects.</p>
+<pre><code>const userData = {
+    name: &#39;John&#39;,
+    // should phone number field be filled with string or numeric value?
+    phoneNumber: &#39;6784939&#39;,
+    numberOfPosts: 10
+}
+    
+const getFullPhoneNumber = (userData) =&gt; {
+    return userData.phoneNumber
+}</code></pre>
+<pre><code>interface UserData {
+    name: string,
+    phoneNumber: number,
+    numberOfPosts: number,
+}
+    
+const userData: UserData = {
+    name: &#39;John&#39;,
+    phoneNumber: &#39;6784939&#39;, // compilation will fail since type in interface is number not string
+    numberOfPosts: 10
+}</code></pre>
+<p>A good practice is also to hold your interfaces and data object on higher level in folder structure to enable reusing them wherever needed, e.g:</p>
+<pre><code>src/
+    components/
+    config/
+        data/
+        interfaces/
+        enums/</code></pre>

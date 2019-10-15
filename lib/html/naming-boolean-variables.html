@@ -1,0 +1,30 @@
+<h1 id="naming-boolean-variables">Naming boolean variables</h1>
+<p>Name boolean variables by following the Java Bean convention of <code>isSomething</code> or <code>hasSomething</code>. Then you can be certain by reading the name of the variable that is a boolean and do not need to dig deeper into code to figure out the type. Of course, this is not that big of a problem when using TypeScript but it is still much easier to and faster to read code without the need to explicitly check the types of each variable:</p>
+<p>For example:</p>
+<pre><code>if (short) {
+    doSomething()
+}
+
+if (user.</code></pre>
+<pre><code>if (isShort) {
+    doSomething()
+}</code></pre>
+<p>Using <code>is*</code>, <code>has*</code> convention makes your code read more like a story <code>if is short</code></p>
+<pre><code>if (loaded &amp;&amp; cookieSet) {
+    return cookie
+    // what is returned? boolean or cookie object or even string?
+}
+</code></pre>
+<pre><code>if (hasLoaded &amp;&amp; isCookieSet) {
+    return isCookie
+}
+</code></pre>
+<p><code>if has loaded and is cookie set</code></p>
+<pre><code>const skillsPresent = () =&gt; {
+    return user.skills
+}</code></pre>
+<p><code>user skills present if user skills</code></p>
+<pre><code>const areSkillsPresent = () =&gt; {
+    return user.hasSkills
+}</code></pre>
+<p><code>user skills are present if user has skills</code></p>

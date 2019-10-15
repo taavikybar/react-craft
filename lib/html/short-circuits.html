@@ -1,0 +1,59 @@
+<h1 id="use-short-circuits-instead-of-ternary-operators">Use short circuits instead of ternary operators</h1>
+<p>Whenever possible, prefer short circuit (<code>&amp;&amp;</code>, <code>||</code>) operands to ternary (<code>? :</code>). The idea is similar to <a href="exit-early-from-if.md">Exit early from if statements</a>. Ternary operations can grow big and the small <code>:</code> might be lost in the midst of code deceptively making you think that that both cases are just one case.</p>
+<pre><code>const Header: React.FC = () =&gt; (
+    &lt;header&gt;
+        {isUserLoggedIn()
+            ? &lt;UserProfile /&gt;
+            : &lt;GuestProfile /&gt;
+        }
+    &lt;/header&gt;
+)</code></pre>
+<pre><code>const Header: React.FC = () =&gt; (
+    &lt;header&gt;
+        {isUserLoggedIn() &amp;&amp; &lt;UserProfile /&gt;}
+        {!isUserLoggedIn() &amp;&amp; &lt;GuestProfile /&gt;}
+    &lt;/header&gt;
+)</code></pre>
+<pre><code>const Menu: Rect.FC = () =&gt; {
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        {isUserLoggedIn() ?
+            &lt;li&gt;
+                &lt;a href=&quot;/profile&quot;&gt;
+                    Profile
+                &lt;/a&gt;
+            &lt;/li&gt;:
+            &lt;li&gt;
+                &lt;a href=&quot;/welcome&quot;&gt;
+                    Welcome
+                &lt;/a&gt;
+            &lt;/li&gt;   
+        }
+    &lt;/ul&gt;
+}</code></pre>
+<pre><code>const Menu: Rect.FC = () =&gt; {
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        
+        {isUserLoggedIn() &amp;&amp;
+            &lt;li&gt;
+                &lt;a href=&quot;/profile&quot;&gt;
+                    Profile
+                &lt;/a&gt;
+            &lt;/li&gt;
+        }
+        
+        {!isUserLoggedIn() &amp;&amp;
+            &lt;li&gt;
+                &lt;a href=&quot;/welcome&quot;&gt;
+                    Welcome
+                &lt;/a&gt;
+            &lt;/li&gt;   
+        }
+    &lt;/ul&gt;
+}</code></pre>
+<p>```</p>
