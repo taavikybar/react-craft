@@ -1,12 +1,12 @@
-import componentExplorerHtml from '../md/component-explorer.html'
-import exitEarlyFromIfHtml from '../md/exit-early-from-if.html'
-import interfacesHtml from '../md/interfaces.html'
-import lintersHtml from '../md/linters.html'
-import namingBooleanVariablesHtml from '../md/naming-boolean-variables.html'
-import namingFilesHtml from '../md/naming-files.html'
-import shortCircuitsHtml from '../md/short-circuits.html'
-import shorthandFragmentSyntaxHtml from '../md/shorthand-fragment-syntax.html'
-import yarnVersionHtml from '../md/yarn-version.html'
+import componentExplorerHtml from '../html/component-explorer.html'
+import exitEarlyFromIfHtml from '../html/exit-early-from-if.html'
+import interfacesHtml from '../html/interfaces.html'
+import lintersHtml from '../html/linters.html'
+import namingBooleanVariablesHtml from '../html/naming-boolean-variables.html'
+import namingFilesHtml from '../html/naming-files.html'
+import shortCircuitsHtml from '../html/short-circuits.html'
+import shorthandFragmentSyntaxHtml from '../html/shorthand-fragment-syntax.html'
+import yarnVersionHtml from '../html/yarn-version.html'
 
 interface LinkConfig {
   url: string
