@@ -57,7 +57,7 @@
     "dev": "webpack",
     "prod": "webpack --config webpack.config.prod.js",
     "build": "yarn prod && copyfiles \"_redirects\" \"build\"",
-    "hot": "webpack-dev-server && copyfiles \"index.html\" \"build\"",
+    "hot": "copyfiles \"index.html\" \"build\" && webpack-dev-server",
     "prod-server": "http-server build",
     "lint": "yarn eslint && yarn sasslint",
     "lint-fix": "yarn eslint --fix && yarn sasslint",
@@ -70,8 +70,11 @@
     "clean-server": "rm -rf server-dist",
     "clean-fe": "rm -rf dist build",
     "clean": "rm -rf server-dist server-build && yarn clean-fe",
-    "start": "concurrently \"yarn server-w\" \"yarn server\" \"yarn hot\"",
-    "convert-md": "sh convert-md.sh"
+    "convert-md": "sh scripts/convert-md.sh",
+    "watch-md": "yarn convert-md && watch \"lib/md/**/*\" \"yarn convert-md\"",
+    "copy-images": "copyfiles -u 1 \"lib/img/**/*\" \"build\"",
+    "watch-images": "yarn copy-images && watch \"lib/img/**/*\" \"yarn copy-images\"",
+    "start": "sh scripts/start.sh"
   },
   "husky": {
     "hooks": {

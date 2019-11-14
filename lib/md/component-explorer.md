@@ -10,13 +10,15 @@ Component explorer is also a great place to develop new components in, isolating
 
 #### Storybook
 
-One of the most popular component explorers is [Storybook](https://storybook.js.org/).
+One of the most popular component explorers is [Storybook][1].
 
-![Storybook](https://storybook.js.org/docs/static/screenshot-9f029fae5a437263c89b0ca7e7ca6603-0c959.png)
-
+![][image-1]
 
 #### Alternatives
 
-There are a lot of other similar tools out there, [a list can be found here](https://react-styleguidist.js.org/docs/cookbook.html#are-there-any-other-projects-like-this).
+There are a lot of other similar tools out there, [a list can be found here][2].
 
+[1]:	https://storybook.js.org/
+[2]:	https://react-styleguidist.js.org/docs/cookbook.html#are-there-any-other-projects-like-this
 
+[image-1]:	/img/storybook.png

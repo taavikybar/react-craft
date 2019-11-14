@@ -5,8 +5,12 @@ import send from 'koa-send'
 const app = new Koa()
 const rootDir = './build'
 
+const allowedExtensions = ['.js', '.png', '.jpg']
+
+const isFileAllowed = (file: string): boolean => allowedExtensions.filter(ext => file.includes(ext)).length > 0
+
 app.use(async (ctx: Koa.ParameterizedContext) => {
-  if (ctx.path.includes('.js')) {
+  if (isFileAllowed(ctx.path)) {
     return await send(ctx, path.join(rootDir, ctx.path))
   }
 

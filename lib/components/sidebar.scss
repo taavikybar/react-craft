@@ -1,7 +1,11 @@
 .sidebar {
   padding: 20px 40px;
-  background: #f1f5ff;
-  min-width: 220px;
+  background: #f9f9f9;
+  width: 220px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
 
   &__logo {
     text-transform: uppercase;
@@ -25,7 +29,6 @@
     margin: 5px 0;
     font-size: 14px;
     color: #222;
-    font-weight: 500;
 
     &:hover {
       opacity: 0.7;
