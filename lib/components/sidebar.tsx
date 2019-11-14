@@ -15,7 +15,7 @@ export const Sidebar: React.FC<Props> = ({ currentPath }) => (
       React Craft
     </Link>
 
-    <nav>
+    <nav className="sidebar__nav">
       <ul className="sidebar__links">
         {links.map((link, index) => (
           <li key={index}>
@@ -25,6 +25,26 @@ export const Sidebar: React.FC<Props> = ({ currentPath }) => (
           </li>
         ))}
       </ul>
+
+      <div className="sidebar__socials">
+        <a href="https://www.linkedin.com/in/taavi-kybar" target="_blank" rel="noopener noreferrer">
+          <i className="icon icon--no-left-margin">
+            <img src="/img/linkedin.png" />
+          </i>
+        </a>
+
+        <a href="https://medium.com/@taavi.kyber" target="_blank" rel="noopener noreferrer">
+          <i className="icon">
+            <img src="/img/medium.png" />
+          </i>
+        </a>
+
+        <a href="https://github.com/taavikybar" target="_blank" rel="noopener noreferrer">
+          <i className="icon">
+            <img src="/img/github.png" />
+          </i>
+        </a>
+      </div>
     </nav>
   </aside>
 )

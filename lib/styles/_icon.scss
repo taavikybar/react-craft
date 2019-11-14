@@ -1,0 +1,12 @@
+.icon {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 100px;
+
+  &--no-left-margin {
+    margin-left: 0;
+  }
+}
