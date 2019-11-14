@@ -1,25 +1,31 @@
+@import '../styles/globals';
+
 .sidebar {
-  padding: 20px 40px;
-  background: #f9f9f9;
-  width: 220px;
+  padding: 20px 0;
+  width: 300px;
   position: fixed;
+  background: white;
   left: 0;
   top: 0;
   height: 100%;
+  box-shadow: 2px 0 29px rgba(0, 0, 0, 0.15);
 
   &__logo {
     text-transform: uppercase;
-    font-weight: 500;
-    text-align: center;
-    font-size: 20px;
-    margin: 20px 0 40px;
+    font-size: 80px;
+    margin-bottom: 40px;
     display: block;
     color: #222;
+    line-height: 70px;
+    text-align: center;
+    font-weight: 300;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
   }
 
   &__links {
     list-style: none;
-    padding: 0;
+    padding: 0 40px;
   }
 
   &__link {
@@ -29,9 +35,13 @@
     margin: 5px 0;
     font-size: 14px;
     color: #222;
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
 
+    &--active,
     &:hover {
-      opacity: 0.7;
+      border-bottom: 2px solid $danubeBlue;
+      border-top: 2px solid $danubeBlue;
     }
   }
 }

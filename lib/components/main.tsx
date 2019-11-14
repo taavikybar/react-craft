@@ -1,5 +1,6 @@
 import { BrowserRouter, Route } from 'react-router-dom'
-import React from 'react'
+import React, { useState } from 'react'
+import { createBrowserHistory } from 'history'
 
 import { links } from '../config/links'
 
@@ -8,20 +9,26 @@ import { Article } from './article'
 import { Home } from './home'
 import { Sidebar } from './sidebar'
 
-export const Main: React.FC = () => (
-  <main className="main">
-    <BrowserRouter>
-      <Sidebar />
+const history = createBrowserHistory()
 
-      <Route path="/" exact>
-        <Home />
-      </Route>
+export const Main: React.FC = () => {
+  const [pathName, setPathName] = useState(history.location.pathname)
 
-      {links.map((link, index) => (
-        <Route key={index} path={link.url} exact>
-          <Article html={link.html || ''} />
+  return (
+    <main className="main">
+      <BrowserRouter>
+        <Sidebar currentPath={pathName} />
+
+        <Route path="/" exact>
+          <Home />
         </Route>
-      ))}
-    </BrowserRouter>
-  </main>
-)
+
+        {links.map((link, index) => (
+          <Route key={index} path={link.url} exact>
+            <Article html={link.html || ''} onRender={setPathName} />
+          </Route>
+        ))}
+      </BrowserRouter>
+    </main>
+  )
+}
