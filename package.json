@@ -56,7 +56,7 @@
   "scripts": {
     "dev": "webpack",
     "prod": "webpack --config webpack.config.prod.js",
-    "build": "yarn prod && copyfiles \"_redirects\" \"build\"",
+    "build": "yarn prod && yarn copy-images && copyfiles \"_redirects\" \"build\"",
     "hot": "copyfiles \"index.html\" \"build\" && webpack-dev-server",
     "lint": "yarn eslint && yarn sasslint",
     "lint-fix": "yarn eslint --fix && yarn sasslint",
