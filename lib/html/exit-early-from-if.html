@@ -40,9 +40,7 @@ return (
     /&gt;
 )
 </code></pre>
-<pre><code>const userName = getUserName(user)
-
-const getUserName = user =&gt; {
+<pre><code>const getUserName = (user: string) =&gt; {
     let userName = &#39;&#39;
     
     if (user.id === 1) {
@@ -59,12 +57,12 @@ const getUserName = user =&gt; {
     
     return userName
 }
-</code></pre>
-<pre><code>const userName = getUserName(user)
 
-const getUserName = user =&gt; {
+const userName = getUserName(user)
+</code></pre>
+<pre><code>const getUserName = (user: string) =&gt; {
     if (user.id === 1) {
-        return &#39;John
+        return &#39;John&#39;
     } 
     
     if (user.id === 2) {
@@ -81,4 +79,6 @@ const getUserName = user =&gt; {
     
     return &#39;User not found&#39;
 }
+
+const userName = getUserName(user)
 </code></pre>

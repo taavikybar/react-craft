@@ -24,7 +24,8 @@ interface UserData {
 
 const userData: UserData = {
 	name: 'John',
-	phoneNumber: '6784939', // compilation will fail since type in interface is number not string
+	// compilation will fail since type in interface is number not string
+	phoneNumber: '6784939',
 	numberOfPosts: 10
 }
 ```

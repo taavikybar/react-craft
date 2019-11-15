@@ -1,4 +1,32 @@
+@import '../styles/variables';
+
 .article {
   padding: 30px 60px;
   max-width: 900px;
+
+  a {
+    color: $linkColor;
+
+    &:hover {
+      border-bottom: 2px solid $primaryColor;
+    }
+  }
+
+  ul,
+  ol {
+    li {
+      list-style: none;
+      position: relative;
+
+      &::before {
+        content: '';
+        border-bottom: 4px solid $textColor;
+        display: block;
+        width: 10px;
+        position: absolute;
+        left: -15px;
+        top: 15px;
+      }
+    }
+  }
 }

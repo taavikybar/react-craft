@@ -27,7 +27,7 @@
 },</code></pre>
 <p>Now <code>yarn lint</code> or <code>npm run lint</code> can be run in CI tools or as a <code>precommit</code> hook.</p>
 <h2 id="what-to-run-linters-on">What to run linters on</h2>
-<p>You may choose to always run linters on all files, which might get slow if the codebase is big. Instead, you can run linters on staged files (files added by <code>git add</code>) only using <code>lint-staged</code><a href="https://github.com/okonet/lint-staged">package</a>.</p>
+<p>You may choose to always run linters on all files, which might get slow if the codebase is big. Instead, you can run linters on staged files (files added by <code>git add</code>) only using <code>lint-staged</code> <a href="https://github.com/okonet/lint-staged">package</a>.</p>
 <p>You need to also install <a href="https://github.com/typicode/husky#readme">Husky</a> in order to run git hooks easily.</p>
 <p>An example configuration in <code>package.json</code> file:</p>
 <pre><code>&quot;scripts&quot;: {

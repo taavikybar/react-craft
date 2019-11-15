@@ -1,2 +1,46 @@
-@import 'colors';
+@import 'variables';
+
+html,
+body,
+#root {
+  min-height: 100%;
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+a {
+  text-decoration: none;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  &:hover img {
+    opacity: 0.8;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+code {
+  background: $codeBackground;
+  padding: 5px;
+  color: white;
+  border-radius: 6px;
+}
+
+pre {
+  code {
+    display: block;
+    margin: 10px 0;
+    padding: 20px;
+  }
+}
+
 @import 'icon';
+@import 'typography';

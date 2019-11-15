@@ -58,9 +58,7 @@ return (
 ```
 
 ```
-const userName = getUserName(user)
-
-const getUserName = user => {
+const getUserName = (user: string) => {
 	let userName = ''
 	
 	if (user.id === 1) {
@@ -78,14 +76,14 @@ const getUserName = user => {
 	return userName
 }
 
-```
-
-```
 const userName = getUserName(user)
 
-const getUserName = user => {
+```
+
+```
+const getUserName = (user: string) => {
 	if (user.id === 1) {
-		return 'John
+		return 'John'
 	} 
 	
 	if (user.id === 2) {
@@ -102,5 +100,7 @@ const getUserName = user => {
 	
 	return 'User not found'
 }
+
+const userName = getUserName(user)
 
 ```

@@ -18,7 +18,8 @@ const getFullPhoneNumber = (userData) =&gt; {
 
 const userData: UserData = {
     name: &#39;John&#39;,
-    phoneNumber: &#39;6784939&#39;, // compilation will fail since type in interface is number not string
+    // compilation will fail since type in interface is number not string
+    phoneNumber: &#39;6784939&#39;,
     numberOfPosts: 10
 }</code></pre>
 <p>A good practice is also to hold your interfaces and data object on higher level in folder structure to enable reusing them wherever needed, e.g:</p>

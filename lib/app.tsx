@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'normalize.css'
 
-import './app.scss'
+import './styles/globals.scss'
 import { Main } from './components/main'
 
 window.setTimeout(() => {

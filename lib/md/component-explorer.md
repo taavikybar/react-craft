@@ -8,17 +8,16 @@ They enable you to create a single point of truth for UI components, demo how th
 
 Component explorer is also a great place to develop new components in, isolating them from the rest of the system and enabling a self-contained and fast sandbox for development.
 
-#### Storybook
+## Storybook
 
 One of the most popular component explorers is [Storybook][1].
 
 ![][image-1]
 
-#### Alternatives
+## Alternatives
 
 There are a lot of other similar tools out there, [a list can be found here][2].
 
-[1]:	https://storybook.js.org/
-[2]:	https://react-styleguidist.js.org/docs/cookbook.html#are-there-any-other-projects-like-this
-
-[image-1]:	/img/storybook.png
+[1]: https://storybook.js.org/
+[2]: https://react-styleguidist.js.org/docs/cookbook.html#are-there-any-other-projects-like-this
+[image-1]: /img/storybook.png
