@@ -54,7 +54,6 @@
     "react-router-dom": "^5.0.1"
   },
   "scripts": {
-    "dev": "webpack",
     "prod": "webpack --config webpack.config.prod.js",
     "build": "yarn prod && yarn copy-images && copyfiles \"_redirects\" \"build\"",
     "hot": "copyfiles \"index.html\" \"build\" && webpack-dev-server",
@@ -74,7 +73,7 @@
     "watch-md": "yarn convert-md && watch \"lib/md/**/*\" \"yarn convert-md\"",
     "copy-images": "copyfiles -u 1 \"lib/img/**/*\" \"build\"",
     "watch-images": "yarn copy-images && watch \"lib/img/**/*\" \"yarn copy-images\"",
-    "start": "sh scripts/start.sh"
+    "dev": "sh scripts/dev.sh"
   },
   "husky": {
     "hooks": {
