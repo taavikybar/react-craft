@@ -36,7 +36,6 @@
   &__bottom {
     overflow: hidden;
     height: 0;
-    transition: height 0.2s;
 
     &--open {
       height: 490px;

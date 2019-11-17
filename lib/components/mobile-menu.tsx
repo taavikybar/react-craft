@@ -12,11 +12,12 @@ interface Props {
 
 export const MobileMenu: React.FC<Props> = ({ currentPath }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const closeMenu = (): void => setIsMenuOpen(false)
 
   return (
     <div className="mobile-menu">
       <div className="mobile-menu__top">
-        <Link className="mobile-menu__logo" to="/">
+        <Link className="mobile-menu__logo" to="/" onClick={closeMenu}>
           React Craft
         </Link>
 
@@ -31,6 +32,7 @@ export const MobileMenu: React.FC<Props> = ({ currentPath }) => {
                 <Link
                   className={`mobile-menu__link${currentPath === link.url ? ' mobile-menu__link--active' : ''}`}
                   to={link.url}
+                  onClick={closeMenu}
                 >
                   {link.title}
                 </Link>
@@ -39,7 +41,7 @@ export const MobileMenu: React.FC<Props> = ({ currentPath }) => {
           </ul>
         </nav>
 
-        <Socials small centered />
+        <Socials small centered onClick={closeMenu} />
       </div>
     </div>
   )
