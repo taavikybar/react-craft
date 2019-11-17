@@ -5,7 +5,8 @@ Having `any` as a type defeats the purpose of TypeScript and effectively disable
 ```
 const userData = {
 	name: 'John',
-	// should phone number field be filled with string or numeric value?
+	// should phone number field be filled with
+	// string or numeric value?
 	phoneNumber: '6784939',
 	numberOfPosts: 10
 }
@@ -24,7 +25,8 @@ interface UserData {
 
 const userData: UserData = {
 	name: 'John',
-	// compilation will fail since type in interface is number not string
+	// compilation will fail since type in interface
+	// is number not string
 	phoneNumber: '6784939',
 	numberOfPosts: 10
 }

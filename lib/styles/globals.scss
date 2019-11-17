@@ -1,5 +1,9 @@
 @import 'variables';
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
@@ -8,6 +12,7 @@ body,
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 14px;
   line-height: 28px;
+  overflow-x: hidden;
 }
 
 a {
@@ -28,17 +33,20 @@ img {
 }
 
 code {
-  background: $codeBackground;
   padding: 5px;
   color: white;
-  border-radius: 6px;
+  border-radius: 4px;
+  overflow-x: auto;
+  background: $codeBackground;
 }
 
 pre {
+  background: $codeBackground;
+  padding: 0 20px;
+
   code {
     display: block;
-    margin: 10px 0;
-    padding: 20px;
+    padding: 20px 0;
   }
 }
 

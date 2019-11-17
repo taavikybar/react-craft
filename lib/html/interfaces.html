@@ -2,7 +2,8 @@
 <p>Having <code>any</code> as a type defeats the purpose of TypeScript and effectively disables type checking. Whenever possible, create interfaces for data objects.</p>
 <pre><code>const userData = {
     name: &#39;John&#39;,
-    // should phone number field be filled with string or numeric value?
+    // should phone number field be filled with
+    // string or numeric value?
     phoneNumber: &#39;6784939&#39;,
     numberOfPosts: 10
 }
@@ -18,7 +19,8 @@ const getFullPhoneNumber = (userData) =&gt; {
 
 const userData: UserData = {
     name: &#39;John&#39;,
-    // compilation will fail since type in interface is number not string
+    // compilation will fail since type in interface
+    // is number not string
     phoneNumber: &#39;6784939&#39;,
     numberOfPosts: 10
 }</code></pre>

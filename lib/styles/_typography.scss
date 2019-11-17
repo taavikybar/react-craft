@@ -10,8 +10,12 @@ body {
       content: '';
       border-bottom: 4px solid $textColor;
       display: block;
-      width: 10%;
+      width: 40px;
       margin: 20px 0 12px -20px;
+
+      @media (max-width: 600px) {
+        margin-left: 0;
+      }
     }
   }
 
