@@ -8,6 +8,7 @@ import './main.scss'
 import { Article } from './article'
 import { Home } from './home'
 import { Sidebar } from './sidebar'
+import { MobileMenu } from './mobile-menu'
 
 const history = createBrowserHistory()
 
@@ -18,6 +19,7 @@ export const Main: React.FC = () => {
     <main className="main">
       <BrowserRouter>
         <Sidebar currentPath={pathName} />
+        <MobileMenu currentPath={pathName} />
 
         <Route path="/" exact>
           <Home />

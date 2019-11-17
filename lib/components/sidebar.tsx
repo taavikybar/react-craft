@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { links } from '../config/links'
 
 import './sidebar.scss'
+import { Socials } from './socials'
 
 interface Props {
   currentPath: string
@@ -26,25 +27,7 @@ export const Sidebar: React.FC<Props> = ({ currentPath }) => (
         ))}
       </ul>
 
-      <div className="sidebar__socials">
-        <a href="https://www.linkedin.com/in/taavi-kybar" target="_blank" rel="noopener noreferrer">
-          <i className="icon icon--no-left-margin">
-            <img src="/img/linkedin.png" />
-          </i>
-        </a>
-
-        <a href="https://medium.com/@taavi.kyber" target="_blank" rel="noopener noreferrer">
-          <i className="icon">
-            <img src="/img/medium.png" />
-          </i>
-        </a>
-
-        <a href="https://github.com/taavikybar" target="_blank" rel="noopener noreferrer">
-          <i className="icon">
-            <img src="/img/github.png" />
-          </i>
-        </a>
-      </div>
+      <Socials />
     </nav>
   </aside>
 )
