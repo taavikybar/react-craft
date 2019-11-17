@@ -31,29 +31,4 @@
       opacity: 0.8;
     }
   }
-
-  &__nav {
-    padding: 0 40px;
-  }
-
-  &__links {
-    list-style: none;
-    padding: 0;
-  }
-
-  &__link {
-    display: block;
-    padding: 5px 0;
-    margin: 5px 0;
-    font-size: 14px;
-    color: $textColor;
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid transparent;
-
-    &--active,
-    &:hover {
-      border-bottom: 2px solid $primaryColor;
-      border-top: 2px solid $primaryColor;
-    }
-  }
 }

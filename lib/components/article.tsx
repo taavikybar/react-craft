@@ -3,16 +3,19 @@ import React, { useEffect } from 'react'
 import './article.scss'
 
 interface Props {
-  html: string
+  html?: string
+  children?: React.ReactNode
   onRender: (pathName: string) => void
 }
 
-export const Article: React.FC<Props> = ({ html, onRender }) => {
+export const Article: React.FC<Props> = ({ html, children, onRender }) => {
   useEffect(() => onRender(window.location.pathname))
 
   return (
-    <div className="article">
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </div>
+    <article className="article">
+      {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
+
+      {children}
+    </article>
   )
 }

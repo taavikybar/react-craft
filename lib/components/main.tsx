@@ -1,14 +1,16 @@
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
 import React, { useState } from 'react'
 import { createBrowserHistory } from 'history'
 
-import { links } from '../config/links'
+import { links, home } from '../config/links'
 
 import './main.scss'
 import { Article } from './article'
-import { Home } from './home'
 import { Sidebar } from './sidebar'
 import { MobileMenu } from './mobile-menu'
+import { Navigation } from './navigation'
+import { Socials } from './socials'
+import { Links } from './links'
 
 const history = createBrowserHistory()
 
@@ -17,20 +19,23 @@ export const Main: React.FC = () => {
 
   return (
     <main className="main">
-      <BrowserRouter>
+      <Router history={history}>
         <Sidebar currentPath={pathName} />
         <MobileMenu currentPath={pathName} />
 
         <Route path="/" exact>
-          <Home />
+          <Article onRender={setPathName} html={home.html} />
+          <Links inArticle />
+          <Socials centered />
         </Route>
 
         {links.map((link, index) => (
           <Route key={index} path={link.url} exact>
             <Article html={link.html || ''} onRender={setPathName} />
+            <Navigation currentPathName={pathName} />
           </Route>
         ))}
-      </BrowserRouter>
+      </Router>
     </main>
   )
 }

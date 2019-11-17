@@ -7,11 +7,18 @@ import namingFilesHtml from '../html/naming-files.html'
 import shortCircuitsHtml from '../html/short-circuits.html'
 import shorthandFragmentSyntaxHtml from '../html/shorthand-fragment-syntax.html'
 import yarnVersionHtml from '../html/yarn-version.html'
+import reactCraftHtml from '../html/react-craft.html'
 
 interface LinkConfig {
   url: string
   title: string
   html?: string
+}
+
+export const home: LinkConfig = {
+  url: '/',
+  title: 'React Craft',
+  html: reactCraftHtml,
 }
 
 export const links: LinkConfig[] = [
