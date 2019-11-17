@@ -1,3 +1,3 @@
 # React Craft
 
-Practical guidelines how to improve React applications regarding Clean Code and Clean Architecture.
+#### Practical guidelines how to improve React applications regarding Clean Code and Clean Architecture.
