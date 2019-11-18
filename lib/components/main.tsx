@@ -10,6 +10,7 @@ import { Sidebar } from './sidebar'
 import { MobileMenu } from './mobile-menu'
 import { Navigation } from './navigation'
 import { Socials } from './socials'
+import { Comments } from './comments'
 
 const history = createBrowserHistory()
 
@@ -32,6 +33,7 @@ export const Main: React.FC = () => {
         {links.map((link, index) => (
           <Route key={index} path={link.url} exact>
             <Article html={link.html || ''} onRender={setPathName} />
+            <Comments />
             <Navigation currentPathName={pathName} />
           </Route>
         ))}
