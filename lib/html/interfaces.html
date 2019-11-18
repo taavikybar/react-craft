@@ -1,16 +1,18 @@
 <h1 id="create-interfaces-for-any-sort-of-data-object">Create interfaces for any sort of data object</h1>
 <p>Having <code>any</code> as a type defeats the purpose of TypeScript and effectively disables type checking. Whenever possible, create interfaces for data objects.</p>
+<p>Consider the following example:</p>
 <pre><code>const userData = {
     name: &#39;John&#39;,
+    
     // should phone number field be filled with
     // string or numeric value?
     phoneNumber: &#39;6784939&#39;,
     numberOfPosts: 10
 }
 
-const getFullPhoneNumber = (userData) =&gt; {
-    return userData.phoneNumber
-}</code></pre>
+// userData type is any so the method can return value of any type
+const getFullPhoneNumber = userData =&gt; userData.phoneNumber</code></pre>
+<p>Better approach is to define an interface for data structures to be explicit in the possible types:</p>
 <pre><code>interface UserData {
     name: string,
     phoneNumber: number,
@@ -23,7 +25,11 @@ const userData: UserData = {
     // is number not string
     phoneNumber: &#39;6784939&#39;,
     numberOfPosts: 10
-}</code></pre>
+}
+
+// this method will explicitly return a number now
+const getFullPhoneNumber = (userData: UserData) =&gt; userData.phoneNumber</code></pre>
+<h3 id="structure">Structure</h3>
 <p>A good practice is also to hold your interfaces and data object on higher level in folder structure to enable reusing them wherever needed, e.g:</p>
 <pre><code>src/
     components/

@@ -1,16 +1,20 @@
 <h1 id="exit-early-from-if-statements">Exit early from if statements</h1>
-<p>Nested statements are hard to read and the more nesting the more logic the reader needs to keep in mind at once. Whenever possible, return immediately from your if statements instead of using <code>else</code>. In this scenario, the last else statement does not need to be inside an else anymore.</p>
-<p>If/else statements can grow very big and you can never be sure whether some code sits after the if/else waiting to be executed once all the if/else-s are checked through. If you exit early from an if statement, you explicitly tell to the reader that there is no additional code in this method that will be executed.</p>
+<p>Nested statements are hard to read and, the more nesting, the more logic the reader needs to keep in mind at once. Whenever possible, return immediately from if statements instead of using <code>else</code>. In that case, the last else statement does not need to be inside an else anymore.</p>
+<p>If/else statements can grow very big and you can never be sure whether some code sits after the if/else waiting to be executed once all the if/else-s have been checked through. If you exit early from an if statement, you explicitly tell the reader that there is no additional code in this method that will be executed.</p>
+<p>Instead of:</p>
 <pre><code>if (isUserLoggedIn()) {
     startSession()
 } else {
     greetQuest()
 }</code></pre>
+<p>you can simplify by returning early:</p>
 <pre><code>if (isUserLoggedIn()) {
     return startSession()
 }
 
 greetQuest()</code></pre>
+<hr />
+<p>Instead of nesting multiple if statements:</p>
 <pre><code>const data = getSomeData()
 
 if (data) {
@@ -25,6 +29,7 @@ if (data) {
         }
     }
 }</code></pre>
+<p>you can exit early and keep the structure flat:</p>
 <pre><code>const data = getSomeData()
 
 if (!data || !data.user) {
@@ -40,6 +45,8 @@ return (
     /&gt;
 )
 </code></pre>
+<hr />
+<p>Instead of multiple if/else statements:</p>
 <pre><code>const getUserName = (user: string) =&gt; {
     let userName = &#39;&#39;
     
@@ -60,6 +67,7 @@ return (
 
 const userName = getUserName(user)
 </code></pre>
+<p>you can exit after each statement and simplify the logic:</p>
 <pre><code>const getUserName = (user: string) =&gt; {
     if (user.id === 1) {
         return &#39;John&#39;

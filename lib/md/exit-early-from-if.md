@@ -1,9 +1,10 @@
 # Exit early from if statements
 
-Nested statements are hard to read and the more nesting the more logic the reader needs to keep in mind at once. Whenever possible, return immediately from your if statements instead of using `else`. In this scenario, the last else statement does not need to be inside an else anymore. 
+Nested statements are hard to read and, the more nesting, the more logic the reader needs to keep in mind at once. Whenever possible, return immediately from if statements instead of using `else`. In that case, the last else statement does not need to be inside an else anymore. 
 
-If/else statements can grow very big and you can never be sure whether some code sits after the if/else waiting to be executed once all the if/else-s are checked through. If you exit early from an if statement, you explicitly tell to the reader that there is no additional code in this method that will be executed.
+If/else statements can grow very big and you can never be sure whether some code sits after the if/else waiting to be executed once all the if/else-s have been checked through. If you exit early from an if statement, you explicitly tell the reader that there is no additional code in this method that will be executed.
 
+Instead of:
 
 ```
 if (isUserLoggedIn()) {
@@ -13,6 +14,8 @@ if (isUserLoggedIn()) {
 }
 ```
 
+you can simplify by returning early:
+
 ```
 if (isUserLoggedIn()) {
 	return startSession()
@@ -20,7 +23,9 @@ if (isUserLoggedIn()) {
 
 greetQuest()
 ```
+---
 
+Instead of nesting multiple if statements:
 
 ```
 const data = getSomeData()
@@ -39,6 +44,8 @@ if (data) {
 }
 ```
 
+you can exit early and keep the structure flat:
+
 ```
 const data = getSomeData()
 
@@ -56,6 +63,8 @@ return (
 )
 
 ```
+---
+Instead of multiple if/else statements:
 
 ```
 const getUserName = (user: string) => {
@@ -79,6 +88,7 @@ const getUserName = (user: string) => {
 const userName = getUserName(user)
 
 ```
+you can exit after each statement and simplify the logic:
 
 ```
 const getUserName = (user: string) => {

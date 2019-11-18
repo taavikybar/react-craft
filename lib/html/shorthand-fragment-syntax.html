@@ -6,7 +6,7 @@
 </ul>
 <p>Second option is better since it does no add additional unnecessary html elements to the DOM.</p>
 <p>If you do not need to pass props to <code>React.Fragment</code>, always use shorthand syntax <code>&lt;&gt;&lt;/&gt;</code> because <code>&lt;React.Fragment&gt;&lt;/React.Fragment&gt;</code> is boilerplate code and adds no extra information.</p>
-<p>For example:</p>
+<p>For example, the following code contains a lot of duplicate information:</p>
 <pre><code>&lt;React.Fragment&gt;
     &lt;ProfileSection /&gt;
     
@@ -25,7 +25,7 @@
         &lt;/React.Fragment&gt;
     &lt;/SkillSection&gt;
 &lt;/React.Fragment&gt;</code></pre>
-<p>With shorthand syntax, it is much easier to concentrate on the important parts of the code and disregard the unimportant <code>Fragments</code>:</p>
+<p>With shorthand syntax, it is much easier to concentrate on the important parts of the code and disregard the boilerplate:</p>
 <pre><code>&lt;&gt;
     &lt;ProfileSection /&gt;
     

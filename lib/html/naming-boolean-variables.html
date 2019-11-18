@@ -1,30 +1,42 @@
 <h1 id="naming-boolean-variables">Naming boolean variables</h1>
-<p>Name boolean variables by following the Java Bean convention of <code>isSomething</code> or <code>hasSomething</code>. Then you can be certain by reading the name of the variable that is a boolean and do not need to dig deeper into code to figure out the type. Of course, this is not that big of a problem when using TypeScript but it is still much easier to and faster to read code without the need to explicitly check the types of each variable:</p>
+<p>Name boolean variables by following the Java Bean convention of <code>isSomething</code> or <code>hasSomething</code>. Then you can be certain by reading the name of the variable that is a boolean and do not need to dig deeper into code to figure out the type. Of course, this is not that big of a problem when using TypeScript but it is still much easier and faster to read code without the need to explicitly check the types of each variable:</p>
 <p>For example:</p>
 <pre><code>if (short) {
     doSomething()
-}
-
-if (user.</code></pre>
+}</code></pre>
+<p>compared to:</p>
 <pre><code>if (isShort) {
     doSomething()
 }</code></pre>
-<p>Using <code>is*</code>, <code>has*</code> convention makes your code read more like a story <code>if is short</code></p>
-<pre><code>if (loaded &amp;&amp; cookieSet) {
-    return cookie
-    // what is returned? boolean or cookie object or even string?
+<p>Using <code>is*</code>, <code>has*</code> convention makes your code read more like a story, e.g <code>if is short, do something</code>.</p>
+<hr />
+<p>In the following example, you need to open the <code>cookieSet()</code> method in order to understand what the method returns:</p>
+<pre><code>const loaded = true
+const cookieSet = true
+const cookie = true
+    
+const cookieSet = () =&gt; {
+    if (loaded &amp;&amp; cookieSet) {
+        return cookie
+        // what is returned? boolean or cookie object or
+        // even a string?
+    }
 }
-</code></pre>
-<pre><code>if (hasLoaded &amp;&amp; isCookieSet) {
-    return isCookie
+
+if (setCookie()) { 
+    console.log(&#39;Cookie is present&#39;)
+}</code></pre>
+<p>Naming booleans with the is/has* convention, it is immediately clear which variables return a boolean value:</p>
+<pre><code>const isCookieSet = () =&gt; {
+    const isLoaded = true
+    const hasCookieSet = true
+    const isCookiePresent = true
+
+    if (isLoaded &amp;&amp; hasCookieSet) {
+        return isCookiePresent
+    }
 }
-</code></pre>
-<p><code>if has loaded and is cookie set</code></p>
-<pre><code>const skillsPresent = () =&gt; {
-    return user.skills
+
+if (isCookieSet()) {
+    console.log(&#39;Cookie is present&#39;)
 }</code></pre>
-<p><code>user skills present if user skills</code></p>
-<pre><code>const areSkillsPresent = () =&gt; {
-    return user.hasSkills
-}</code></pre>
-<p><code>user skills are present if user has skills</code></p>

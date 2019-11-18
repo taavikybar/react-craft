@@ -9,48 +9,46 @@ Second option is better since it does no add additional unnecessary html element
 
 If you do not need to pass props to `React.Fragment`, always use shorthand syntax `<></>` because `<React.Fragment></React.Fragment>` is boilerplate code and adds no extra information.
 
-For example:
+For example, the following code contains a lot of duplicate information:
 
-```
-<React.Fragment>
-	<ProfileSection />
-	
-	<PaymentsSection>
-		<React.Fragment>
-			<BankDetails />
-			<GSTDetails />
-		</React.Fragment>
-	</PaymentsSection>
-	
-	<SkillSection>
-		<React.Fragment>
-			<DirectorSkill />
-			<ManagerSkill />
-			<UserSkill />
-		</React.Fragment>
-	</SkillSection>
-</React.Fragment>
-```
+	<React.Fragment>
+		<ProfileSection />
+		
+		<PaymentsSection>
+			<React.Fragment>
+				<BankDetails />
+				<GSTDetails />
+			</React.Fragment>
+		</PaymentsSection>
+		
+		<SkillSection>
+			<React.Fragment>
+				<DirectorSkill />
+				<ManagerSkill />
+				<UserSkill />
+			</React.Fragment>
+		</SkillSection>
+	</React.Fragment>
 
-With shorthand syntax, it is much easier to concentrate on the important parts of the code and disregard the unimportant `Fragments`:
 
-```
-<>
-	<ProfileSection />
-	
-	<PaymentsSection>
-		<>
-			<BankDetails />
-			<GSTDetails />
-		<>
-	</PaymentsSection>
-	
-	<SkillSection>
-		<>
-			<DirectorSkill />
-			<ManagerSkill />
-			<UserSkill />
-		</>
-	</SkillSection>
-</>
-```
+With shorthand syntax, it is much easier to concentrate on the important parts of the code and disregard the boilerplate:
+
+
+	<>
+		<ProfileSection />
+		
+		<PaymentsSection>
+			<>
+				<BankDetails />
+				<GSTDetails />
+			<>
+		</PaymentsSection>
+		
+		<SkillSection>
+			<>
+				<DirectorSkill />
+				<ManagerSkill />
+				<UserSkill />
+			</>
+		</SkillSection>
+	</>

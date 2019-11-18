@@ -1,0 +1,61 @@
+<h1 id="sass-bem-use-guide">SASS + BEM use guide</h1>
+<h2 id="bem---block-element-modifier">BEM - Block Element Modifier</h2>
+<p><a href="http://getbem.com/introduction/">Official introduction</a></p>
+<p>The idea behind BEM is to create independent reusable pieces of component styles that promote clarity and lack of conflicts. This is very well paired with React components having one BEM block per component.</p>
+<p>This is achieved using following guidelines:</p>
+<h3 id="block-is-the-root-element-of-the-component-in-html">Block is the root element of the component in html</h3>
+<ul>
+<li>An html element should only have one component class otherwise multiple component classes can add conflicting styles and therefore defeat the purpose of BEM</li>
+</ul>
+<h3 id="elements-are-html-elements-that-sit-inside-the-block-element">Elements are html elements that sit inside the Block element</h3>
+<ul>
+<li>BEM Sass code is written in flat hierarchy meaning no element is nested inside another in Sass. This creates the possibility to rearrange elements in html without having to change Sass code</li>
+<li>Elements are marked using double underscores <code>block__element</code></li>
+</ul>
+<h3 id="modifiers-are-alterations-of-elements">Modifiers are alterations of elements</h3>
+<ul>
+<li>They are used to add additional styles when needed e.g larger text, bold, colors etc.</li>
+<li>Element must always have the element class and then modifier classes if needed e.g <code>class="element element--modifier"</code> but never only modifier without element class since element can have styles applied to it without any modifiers</li>
+<li>Modifiers are marked using double hyphens <code>block--modifier</code></li>
+</ul>
+<h3 id="example">Example</h3>
+<pre><code>export const Profile = () =&gt; (
+    &lt;div className=&quot;profile&quot;&gt;
+        &lt;div className=&quot;profile__image&quot;&gt;
+            &lt;img src=&quot;images/profile.jpg&quot; /&gt;
+        &lt;/div&gt;
+        
+        &lt;div className=&quot;profile__name&quot;&gt;
+            &lt;div className=&quot;profile__name-part&quot;&gt;
+                John
+            &lt;/div&gt;
+            
+            &lt;div className=&quot;profile__name-part profile__name-part--bold&quot;&gt;
+                Smith
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+)</code></pre>
+<p>In the given example, <code>profile</code> class is the block.</p>
+<p><code>profile__image</code>, <code>profile__name</code> and <code>profile__name-part</code> are elements inside the <code>profile</code> class.</p>
+<p><code>profile__name-part--bold</code> is modifier for <code>profile__name-part</code> making the text bold.</p>
+<p>Corresponding Sass file could be:</p>
+<pre><code>.profile {
+    &amp;__image {
+        width: 100px;
+    }
+    
+    &amp;__name {
+        display: flex;
+    }
+    
+    &amp;__name-part {
+        font-size: 18px;
+        
+        &amp;--bold {
+            font-weight: 800;
+        }
+    }
+}</code></pre>
+<p>Notice how the <code>&amp;</code> is used to replace the previous identifier.</p>
+<p>Also notice that the structure is flat: <code>&amp;__name-part</code> is not nested inside <code>&amp;__name</code> as it is in the html. This enables you to rearrange elements in html without the need to make any changes to Sass file.</p>

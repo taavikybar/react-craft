@@ -1,9 +1,10 @@
 <h1 id="linters">Linters</h1>
-<h2 id="eslint"><a href="https://eslint.org/">ESLint</a></h2>
 <h4 id="set-up-a-set-of-rules-for-linters-agreed-upon-in-the-team.">Set up a set of rules for linters, agreed upon in the team.</h4>
-<p>Instead of spending time arguing what style is better, decide upon a linter rule and enforce it. For TypeScript use also ESLint via <a href="https://github.com/typescript-eslint/typescript-eslint"><code>typescript-eslint</code></a> since <a href="https://medium.com/palantir/tslint-in-2019-1a144c2317a9">TSLint is deprecating</a>. <a href="https://github.com/palantir/tslint/issues/4534">Migration guide</a>.</p>
-<h4 id="shared-configuration-repository">Shared configuration repository</h4>
-<p>If you have a lot of Node.js based applications, you can create a separate repository to store ESLint rules and use those rules in all the web apps for consistent linting. Then you effectively separate linting concerns from your production code and ensure changes to linting rules via Pull Requests concentrate on linting rules only and are not lost in long feature PR-s.</p>
+<p>Instead of spending time arguing what style is better, decide upon a linter rule and enforce it.</p>
+<h2 id="eslint"><a href="https://eslint.org/">ESLint</a></h2>
+<p>For TypeScript use also ESLint via <a href="https://github.com/typescript-eslint/typescript-eslint"><code>typescript-eslint</code></a> since <a href="https://medium.com/palantir/tslint-in-2019-1a144c2317a9">TSLint is deprecating</a>. <a href="https://github.com/palantir/tslint/issues/4534">Migration guide</a>.</p>
+<h3 id="shared-configuration-repository">Shared configuration repository</h3>
+<p>If you have a lot of Node.js based applications, you can create a separate repository to store ESLint rules and use those rules in all the web applications for consistent linting. Then you effectively separate linting concerns from your production code and ensure changes to linting rules via Pull Requests concentrate on linting rules only and are not lost in long feature PR-s.</p>
 <p>For that you can create a Node.js module starting with <code>eslint-config-</code> e.g <code>eslint-config-myconfig</code>, and include an <code>index.js</code> file with all your configurations. Publish it to NPM registry, install it in your web app and use as so:</p>
 <pre><code>// .eslintrc
 {
@@ -11,8 +12,8 @@
 }</code></pre>
 <p><a href="https://eslint.org/docs/developer-guide/shareable-configs">Exact details how to do shareable ESLint configurations</a></p>
 <h2 id="sasslint"><a href="https://github.com/sasstools/sass-lint">SassLint</a></h2>
-<p>CSS can get extremely complex and contain conflicting rules. Do not underestimate the power and influence of CSS in your projects. With a single misplaced or unsupported rule you can hide an entire button making it impossible to submit a form or advance to the next page.</p>
-<p>In addition to using a structured approach to writing CSS like <a href="bem.md">SASS+BEM</a>, use SassLint in order to enforce an agreed upon set of rules.</p>
+<p>CSS can get extremely complex and contain conflicting rules. Do not underestimate the power and influence of CSS in your projects. With a single misplaced or unsupported rule you can hide an entire button making it impossible to complete checkout or advance to the next page.</p>
+<p>In addition to using a structured approach to writing CSS like <a href="/sass-bem">SASS+BEM</a>, use SassLint in order to enforce an agreed set of rules.</p>
 <h2 id="when-to-run-linters">When to run linters</h2>
 <p>There are multiple ways how and when to run linters:</p>
 <ul>
@@ -27,7 +28,7 @@
 },</code></pre>
 <p>Now <code>yarn lint</code> or <code>npm run lint</code> can be run in CI tools or as a <code>precommit</code> hook.</p>
 <h2 id="what-to-run-linters-on">What to run linters on</h2>
-<p>You may choose to always run linters on all files, which might get slow if the codebase is big. Instead, you can run linters on staged files (files added by <code>git add</code>) only using <code>lint-staged</code> <a href="https://github.com/okonet/lint-staged">package</a>.</p>
+<p>You may choose to always run linters on all files, which might get slow if the codebase is big. Instead, you can run linters on staged files only (files added by <code>git add</code>) using <code>lint-staged</code> <a href="https://github.com/okonet/lint-staged">package</a>.</p>
 <p>You need to also install <a href="https://github.com/typicode/husky#readme">Husky</a> in order to run git hooks easily.</p>
 <p>An example configuration in <code>package.json</code> file:</p>
 <pre><code>&quot;scripts&quot;: {
@@ -37,10 +38,10 @@
     &quot;precommit&quot;: &quot;lint-staged&quot;,
 },
 &quot;lint-staged&quot;: {
-    &quot;src/**/*.{ts,tsx}&quot;: [
+    &quot;src/**/*.{ts,tsx,scss}&quot;: [
         &quot;yarn lint&quot;,
         &quot;git add&quot;
     ]
 },</code></pre>
-<p>Once you have Husky installed, it will run all the <a href="https://githooks.com/">Git Hooks</a> including <code>precommit</code> hook meaning any script you put under the <code>precommit</code> script, will be run before <code>git commit</code> command. In this case, <code>lint-staged</code> script.</p>
+<p>Once you have Husky installed, it will run all the <a href="https://githooks.com/">Git Hooks</a> including <code>precommit</code> hook meaning any script you put under the <code>precommit</code> script, will be run before <code>git commit</code> command. In this case, <code>lint-staged</code> script is run.</p>
 <p>If there are any linting errors, <code>git commit</code> will not run and instead the errors are listed in your terminal. If there are no errors, <code>git commit</code> will run committing your changes.</p>

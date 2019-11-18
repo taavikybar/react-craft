@@ -10,9 +10,10 @@ import { Sidebar } from './sidebar'
 import { MobileMenu } from './mobile-menu'
 import { Navigation } from './navigation'
 import { Socials } from './socials'
-import { Links } from './links'
 
 const history = createBrowserHistory()
+
+history.listen(() => window.scrollTo(0, 0))
 
 export const Main: React.FC = () => {
   const [pathName, setPathName] = useState(history.location.pathname)
@@ -25,7 +26,6 @@ export const Main: React.FC = () => {
 
         <Route path="/" exact>
           <Article onRender={setPathName} html={home.html} />
-          <Links inArticle />
           <Socials centered />
         </Route>
 

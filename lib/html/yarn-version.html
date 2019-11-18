@@ -1,11 +1,22 @@
-<h1 id="use-yarn-version-or-npm-version">Use Yarn version (or npm version)</h1>
+<h1 id="use-yarn-version-or-npm-version">Use yarn version (or npm version)</h1>
 <p>If you are working on a versioned library or application that uses <a href="https://semver.org/">Semantic Versioning</a> to manage its versions, use <a href="https://yarnpkg.com/en/docs/cli/version">Yarn Version</a> or <a href="https://docs.npmjs.com/cli/version">NPM Version</a> to bump the version number instead of manually changing it in <code>package.json</code> and other related places.</p>
 <p>To bump the version, just run the relevant command:</p>
 <ul>
-<li><code>yarn version --patch</code> - PATCH version - Usually a bug fix -&gt; non-breaking change which fixes an issue</li>
-<li><code>yarn version --minor</code> - MINOR version - New feature -&gt; non-breaking change which adds functionality</li>
-<li><code>yarn version --major</code> - MAJOR version - Breaking change -&gt; fix or feature that would cause existing functionality to change</li>
+<li><code>yarn version --patch</code> - PATCH version - Usually a bug fix
+<ul>
+<li>non-breaking change which fixes an issue</li>
+</ul></li>
+<li><code>yarn version --minor</code> - MINOR version - New feature
+<ul>
+<li>non-breaking change which adds functionality</li>
+</ul></li>
+<li><code>yarn version --major</code> - MAJOR version - Breaking change
+<ul>
+<li>fix or feature that would cause existing functionality to change</li>
+</ul></li>
 </ul>
+<p>Use <code>yarn version</code> to get the current version:</p>
+<pre><code>info Current version: 9.15.1</code></pre>
 <h2 id="git-tags">Git tags</h2>
 <p>Using Yarn version also adds appropriate <a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-tag">git tag</a> which can be used to <a href="https://help.github.com/en/articles/creating-releases">create releases in Github</a> (or any other git version control system).</p>
 <p>Use <code>git tag</code> to list all the possible tags:</p>

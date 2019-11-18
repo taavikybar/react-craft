@@ -8,6 +8,7 @@ import shortCircuitsHtml from '../html/short-circuits.html'
 import shorthandFragmentSyntaxHtml from '../html/shorthand-fragment-syntax.html'
 import yarnVersionHtml from '../html/yarn-version.html'
 import reactCraftHtml from '../html/react-craft.html'
+import sassBemHtml from '../html/bem.html'
 
 interface LinkConfig {
   url: string
@@ -66,5 +67,10 @@ export const links: LinkConfig[] = [
     url: '/yarn-version',
     title: 'Yarn version',
     html: yarnVersionHtml,
+  },
+  {
+    url: '/sass-bem',
+    title: 'Sass+Bem use guide',
+    html: sassBemHtml,
   },
 ]
