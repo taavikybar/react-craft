@@ -7,13 +7,14 @@
 </ul>
 <p>and both will work.</p>
 <p>Now when you use the latter option and deploy this file to Linux system, the build will fail since Linux is <strong>case-sensitive</strong> and will look for a file named <code>header.tsx</code> which it cannot find.</p>
-<p>Of course, you can always make sure that you import in correct case but it is very easy to forget that and only see the errors in Linux based CI systems. Safer and easier is to forget everything about cases and use lowercase always to be consistent across different platforms.</p>
-<p>Why not <code>snake_case</code>? Of course, you can name all files in kebab case but that is not so common in Javascript. All packages in npm registry are named in kebab case so mixing these 2 together will create inconsistent import statements:</p>
+<p>Of course, you can always make sure that you import in correct case but it is very easy to forget that and only see the errors in Linux based CI systems. Safer and easier is to forget everything about cases and just use lowercase always, to be consistent across different platforms.</p>
+<p>Why not <code>snake_case</code>? Of course, you can name all files in snake case but that is not so common in Javascript. All packages in npm registry are named in kebab case so mixing these 2 together will create inconsistent import statements:</p>
+<p>Mixed snake and kebab case:</p>
 <pre><code>import ReactDOM from &#39;react-dom&#39;
 import styled from &#39;styled-components&#39;
 import NavigationBar from &#39;navigation_bar&#39;
 import UserMenu from &#39;user_menu&#39;</code></pre>
-<p>vs:</p>
+<p>Only kebab case:</p>
 <pre><code>import ReactDOM from &#39;react-dom&#39;
 import styled from &#39;styled-components&#39;
 import NavigationBar from &#39;navigation-bar&#39;

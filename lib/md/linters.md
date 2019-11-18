@@ -1,6 +1,6 @@
 # Linters
 
-#### Set up a set of rules for linters, agreed upon in the team.
+**Set up a set of rules for linters, agreed upon in the team.**
 
 Instead of spending time arguing what style is better, decide upon a linter rule and enforce it.
 
@@ -14,12 +14,10 @@ If you have a lot of Node.js based applications, you can create a separate repos
 
 For that you can create a Node.js module starting with `eslint-config-` e.g `eslint-config-myconfig`, and include an `index.js` file with all your configurations. Publish it to NPM registry, install it in your web app and use as so:
 
-```
-// .eslintrc
-{
-    "extends": "myconfig"
-}
-```
+	// .eslintrc
+	{
+	    "extends": "myconfig"
+	}
 
 [Exact details how to do shareable ESLint configurations](https://eslint.org/docs/developer-guide/shareable-configs)
 
@@ -38,13 +36,11 @@ There are multiple ways how and when to run linters:
 
 For example, scripts in `package.json`:
 
-```
-"scripts": {
-    "eslint": "eslint",
-    "sasslint": "sass-lint --config .sasslintrc",
-    "lint": "yarn run eslint && yarn run sasslint",
-},
-```
+	"scripts": {
+	    "eslint": "eslint",
+	    "sasslint": "sass-lint --config .sasslintrc",
+	    "lint": "yarn run eslint && yarn run sasslint",
+	}
 
 Now `yarn lint` or `npm run lint` can be run in CI tools or as a `precommit` hook.
 
@@ -56,20 +52,18 @@ You need to also install [Husky](https://github.com/typicode/husky#readme) in or
 
 An example configuration in `package.json` file:
 
-```
-"scripts": {
-	"eslint": "eslint",
-	"sasslint": "sass-lint --config .sasslintrc",
-	"lint": "yarn run eslint && yarn run sasslint",
-	"precommit": "lint-staged",
-},
-"lint-staged": {
-	"src/**/*.{ts,tsx,scss}": [
-		"yarn lint",
-		"git add"
-	]
-},
-```
+	"scripts": {
+		"eslint": "eslint",
+		"sasslint": "sass-lint --config .sasslintrc",
+		"lint": "yarn run eslint && yarn run sasslint",
+		"precommit": "lint-staged",
+	},
+	"lint-staged": {
+		"src/**/*.{ts,tsx,scss}": [
+			"yarn lint",
+			"git add"
+		]
+	}
 
 Once you have Husky installed, it will run all the [Git Hooks](https://githooks.com/) including `precommit` hook meaning any script you put under the `precommit` script, will be run before `git commit` command. In this case, `lint-staged` script is run.
 

@@ -24,19 +24,19 @@ export const home: LinkConfig = {
 
 export const links: LinkConfig[] = [
   {
-    url: '/interfaces',
-    title: 'Interfaces',
-    html: interfacesHtml,
-  },
-  {
     url: '/component-explorer',
-    title: 'Component explorer',
+    title: 'Component explorers',
     html: componentExplorerHtml,
   },
   {
     url: '/exit-early-from-if',
     title: 'Exit early from if',
     html: exitEarlyFromIfHtml,
+  },
+  {
+    url: '/interfaces',
+    title: 'Interfaces',
+    html: interfacesHtml,
   },
   {
     url: '/linters',
@@ -54,6 +54,11 @@ export const links: LinkConfig[] = [
     html: namingFilesHtml,
   },
   {
+    url: '/sass-bem',
+    title: 'Sass + Bem',
+    html: sassBemHtml,
+  },
+  {
     url: '/short-circuits',
     title: 'Short circuits',
     html: shortCircuitsHtml,
@@ -63,14 +68,10 @@ export const links: LinkConfig[] = [
     title: 'Shorthand fragment syntax',
     html: shorthandFragmentSyntaxHtml,
   },
+
   {
     url: '/yarn-version',
     title: 'Yarn version',
     html: yarnVersionHtml,
-  },
-  {
-    url: '/sass-bem',
-    title: 'Sass+Bem use guide',
-    html: sassBemHtml,
   },
 ]

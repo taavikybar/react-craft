@@ -1,5 +1,5 @@
 <h1 id="linters">Linters</h1>
-<h4 id="set-up-a-set-of-rules-for-linters-agreed-upon-in-the-team.">Set up a set of rules for linters, agreed upon in the team.</h4>
+<p><strong>Set up a set of rules for linters, agreed upon in the team.</strong></p>
 <p>Instead of spending time arguing what style is better, decide upon a linter rule and enforce it.</p>
 <h2 id="eslint"><a href="https://eslint.org/">ESLint</a></h2>
 <p>For TypeScript use also ESLint via <a href="https://github.com/typescript-eslint/typescript-eslint"><code>typescript-eslint</code></a> since <a href="https://medium.com/palantir/tslint-in-2019-1a144c2317a9">TSLint is deprecating</a>. <a href="https://github.com/palantir/tslint/issues/4534">Migration guide</a>.</p>
@@ -25,7 +25,7 @@
     &quot;eslint&quot;: &quot;eslint&quot;,
     &quot;sasslint&quot;: &quot;sass-lint --config .sasslintrc&quot;,
     &quot;lint&quot;: &quot;yarn run eslint &amp;&amp; yarn run sasslint&quot;,
-},</code></pre>
+}</code></pre>
 <p>Now <code>yarn lint</code> or <code>npm run lint</code> can be run in CI tools or as a <code>precommit</code> hook.</p>
 <h2 id="what-to-run-linters-on">What to run linters on</h2>
 <p>You may choose to always run linters on all files, which might get slow if the codebase is big. Instead, you can run linters on staged files only (files added by <code>git add</code>) using <code>lint-staged</code> <a href="https://github.com/okonet/lint-staged">package</a>.</p>
@@ -42,6 +42,6 @@
         &quot;yarn lint&quot;,
         &quot;git add&quot;
     ]
-},</code></pre>
+}</code></pre>
 <p>Once you have Husky installed, it will run all the <a href="https://githooks.com/">Git Hooks</a> including <code>precommit</code> hook meaning any script you put under the <code>precommit</code> script, will be run before <code>git commit</code> command. In this case, <code>lint-staged</code> script is run.</p>
 <p>If there are any linting errors, <code>git commit</code> will not run and instead the errors are listed in your terminal. If there are no errors, <code>git commit</code> will run committing your changes.</p>

@@ -43,8 +43,7 @@ return (
         name={name}
         avatar={avatar)
     /&gt;
-)
-</code></pre>
+)</code></pre>
 <hr />
 <p>Instead of multiple if/else statements:</p>
 <pre><code>const getUserName = (user: string) =&gt; {
@@ -65,8 +64,7 @@ return (
     return userName
 }
 
-const userName = getUserName(user)
-</code></pre>
+const userName = getUserName(user)</code></pre>
 <p>you can exit after each statement and simplify the logic:</p>
 <pre><code>const getUserName = (user: string) =&gt; {
     if (user.id === 1) {
@@ -88,5 +86,4 @@ const userName = getUserName(user)
     return &#39;User not found&#39;
 }
 
-const userName = getUserName(user)
-</code></pre>
+const userName = getUserName(user)</code></pre>

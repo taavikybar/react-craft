@@ -2,7 +2,6 @@
 
 Name boolean variables by following the Java Bean convention of `isSomething` or `hasSomething`. Then you can be certain by reading the name of the variable that is a boolean and do not need to dig deeper into code to figure out the type. Of course, this is not that big of a problem when using TypeScript but it is still much easier and faster to read code without the need to explicitly check the types of each variable:
 
-
 For example:
 
 	if (short) {
