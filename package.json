@@ -80,5 +80,9 @@
     "hooks": {
       "pre-commit": "yarn lint-fix"
     }
+  },
+  "resolutions": {
+    "lodash": "4.17.15",
+    "minimatch": "3.0.4"
   }
 }
