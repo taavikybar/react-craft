@@ -2,6 +2,6 @@
 
 # React Craft
 
-Clean Code practices in React applications
+[https://reactcraft.dev](https://reactcraft.dev)
 
-### Work in progress
+Practical guidelines how to improve the quality and readability of React applications.
