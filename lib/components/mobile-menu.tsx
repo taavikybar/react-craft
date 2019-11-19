@@ -14,20 +14,24 @@ export const MobileMenu: React.FC<Props> = ({ currentPath }) => {
   const closeMenu = (): void => setIsMenuOpen(false)
 
   return (
-    <div className="mobile-menu">
-      <div className="mobile-menu__top">
-        <Link className="mobile-menu__logo" to="/" onClick={closeMenu}>
-          React Craft
-        </Link>
+    <>
+      <div className="mobile-menu">
+        <div className="mobile-menu__top">
+          <Link className="mobile-menu__logo" to="/" onClick={closeMenu}>
+            React Craft
+          </Link>
 
-        <div className="mobile-menu__burger" onClick={() => setIsMenuOpen(!isMenuOpen)} />
+          <div className="mobile-menu__burger" onClick={() => setIsMenuOpen(!isMenuOpen)} />
+        </div>
+
+        <div className={`mobile-menu__bottom${isMenuOpen ? ' mobile-menu__bottom--open' : ''}`}>
+          <Links onClickHandler={closeMenu} activeLinkPath={currentPath} inArticle />
+
+          <Socials small centered onClick={closeMenu} />
+        </div>
       </div>
 
-      <div className={`mobile-menu__bottom${isMenuOpen ? ' mobile-menu__bottom--open' : ''}`}>
-        <Links onClickHandler={closeMenu} activeLinkPath={currentPath} inArticle />
-
-        <Socials small centered onClick={closeMenu} />
-      </div>
-    </div>
+      {isMenuOpen && <div onClick={closeMenu} className="overlay" />}
+    </>
   )
 }
