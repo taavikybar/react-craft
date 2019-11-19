@@ -55,7 +55,7 @@
   },
   "scripts": {
     "prod": "webpack --config webpack.config.prod.js",
-    "build": "yarn prod && yarn copy-images && copyfiles \"_redirects\" \"build\"",
+    "build": "yarn prod && yarn copy-images && yarn copy-assets",
     "hot": "copyfiles \"index.html\" \"build\" && webpack-dev-server",
     "lint": "yarn eslint && yarn sasslint",
     "lint-fix": "yarn eslint --fix && yarn sasslint",
@@ -73,6 +73,7 @@
     "watch-md": "yarn convert-md && watch \"lib/md/**/*\" \"yarn convert-md\"",
     "copy-images": "copyfiles -u 1 \"lib/img/**/*\" \"build\"",
     "watch-images": "yarn copy-images && watch \"lib/img/**/*\" \"yarn copy-images\"",
+    "copy-assets": "copyfiles \"sitemap.xml\" \"build\" && copyfiles \"robots.txt\" \"build\" && copyfiles \"_redirects\" \"build\"",
     "dev": "sh scripts/dev.sh"
   },
   "husky": {
