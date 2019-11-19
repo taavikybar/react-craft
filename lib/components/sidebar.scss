@@ -10,6 +10,7 @@
   height: 100%;
   box-shadow: 2px 0 29px rgba(0, 0, 0, 0.15);
   overflow-y: auto;
+  z-index: 100;
 
   @media (max-width: 900px) {
     display: none;
