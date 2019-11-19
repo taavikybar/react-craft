@@ -54,8 +54,11 @@ body,
   ol {
     margin: 10px 0;
   }
+
+  br {
+    line-height: 0px;
+  }
 }
 
 @import 'icon';
 @import 'typography';
-@import 'layout';

@@ -1,5 +1,5 @@
 .socials {
-  margin: 50px 0 20px 0;
+  margin: 40px 0 20px 0;
 
   &--centered {
     text-align: center;
@@ -11,5 +11,9 @@
 
   &--with-paddings {
     padding: 0 40px;
+  }
+
+  a:hover {
+    border: 0;
   }
 }

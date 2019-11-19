@@ -1,4 +1,4 @@
-# SASS + BEM use guide
+# Sass + BEM use guide
 
 
 ## BEM - Block Element Modifier

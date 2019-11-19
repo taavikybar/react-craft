@@ -17,7 +17,7 @@ export const Sidebar: React.FC<Props> = ({ currentPath }) => (
 
     <Links activeLinkPath={currentPath} />
 
-    <div className="_padding">
+    <div className="sidebar__socials">
       <Socials />
     </div>
   </aside>

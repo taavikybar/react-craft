@@ -2,7 +2,7 @@ import { Router, Route } from 'react-router-dom'
 import React, { useState } from 'react'
 import { createBrowserHistory } from 'history'
 
-import { links, home } from '../config/links'
+import { links } from '../config/links'
 
 import './main.scss'
 import { Article } from './article'
@@ -11,6 +11,7 @@ import { MobileMenu } from './mobile-menu'
 import { Navigation } from './navigation'
 import { Socials } from './socials'
 import { Comments } from './comments'
+import { Home } from './home'
 
 const history = createBrowserHistory()
 
@@ -26,8 +27,10 @@ export const Main: React.FC = () => {
         <MobileMenu currentPath={pathName} />
 
         <Route path="/" exact>
-          <Article onRender={setPathName} html={home.html} />
-          <Socials centered />
+          <Article onRender={setPathName}>
+            <Home />
+            <Socials centered />
+          </Article>
         </Route>
 
         {links.map((link, index) => (
