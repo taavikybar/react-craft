@@ -18,12 +18,6 @@ interface LinkConfig {
 
 export const links: LinkConfig[] = [
   {
-    url: '/component-explorer',
-    title: 'Component explorers',
-    longTitle: 'Use a component explorer',
-    html: componentExplorerHtml,
-  },
-  {
     url: '/exit-early-from-if',
     title: 'Exit early from if',
     longTitle: 'Exit early from if statements',
@@ -58,6 +52,12 @@ export const links: LinkConfig[] = [
     title: 'Sass + Bem',
     longTitle: 'Sass + BEM use guide',
     html: sassBemHtml,
+  },
+  {
+    url: '/component-explorer',
+    title: 'Use a component explorer',
+    longTitle: 'Use a component explorer',
+    html: componentExplorerHtml,
   },
   {
     url: '/short-circuits',
