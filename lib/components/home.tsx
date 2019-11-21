@@ -7,7 +7,10 @@ export const Home: React.FC = () => (
   <>
     <h1>React Craft</h1>
 
-    <h4>Practical guidelines how to improve the quality and readability of React applications</h4>
+    <h3>
+      Practical guidelines for improving the quality and readability <br />
+      of React applications
+    </h3>
 
     <p>Following articles aim to address Clean Code and Clean Architecture principles in React applications:</p>
 

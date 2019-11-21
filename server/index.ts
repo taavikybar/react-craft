@@ -17,4 +17,4 @@ app.use(async (ctx: Koa.ParameterizedContext) => {
   await send(ctx, `${rootDir}/index.html`)
 })
 
-app.listen(3000)
+app.listen(3010)
